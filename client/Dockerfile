@@ -10,6 +10,6 @@ RUN yarn build
 FROM nginx:1.19.0
 WORKDIR /usr/share/nginx/html
 RUN rm -rf ./*
-COPY /app/build .
+COPY /app/dist/ .
 EXPOSE 80
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
